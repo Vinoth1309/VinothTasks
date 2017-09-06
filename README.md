@@ -25,6 +25,7 @@ It contains 3 projects
 	Fibonacci(50) must be return to 12586269025
 
    - Nunit Test cases for XMLToJson
-	XmlToJson("") must be return to "Root element is missing."
+	XmlToJson("<foo>hello</bar>") must be return to "Bad XML Format."
+	XmlToJson("<foo>hello</foo>") must be return to "{ "foo": {"value": "hello" }}."
 
    - After run the webservice on localhost, I tested to run this Nunit through Debug -> Start New Instance (it can be checked through other Nunit software like Test driven development)

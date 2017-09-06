@@ -27,7 +27,9 @@ namespace Service1ClientTests
         [Test]
         public void XMLToJsonTest()
         {
-            Assert.AreEqual("Root element is missing.", client.XmlToJson(string.Empty));
+            Assert.AreEqual("Bad XML Format", client.XmlToJson("<foo>hello</bar>"));
+            Assert.AreEqual("{ \"foo\": {\"value\": \"hello\" }}", client.XmlToJson("<foo>hello</foo>"));
+            
         }
     }
 }

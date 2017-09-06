@@ -71,9 +71,9 @@ namespace TaskWebService
                 {
                     doc.LoadXml(xml);
                 }
-                catch (XmlException xmlEx)
+                catch (XmlException)
                 {
-                    return jsonResult = "Bad XML Format: " + xmlEx.Message.ToString();
+                    return jsonResult = "Bad XML Format";
                 }
                 if (WebConfigurationManager.AppSettings["JsonFormat"].ToString() == "True")
                     jsonResult = XMLToJson.XmlToJSON(doc);
