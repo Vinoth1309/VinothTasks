@@ -6,7 +6,7 @@ It contains 3 projects
 1.TaskConsole 
    - console application which called the WebService (on localhost) to compute the Fibonacci(n) and print the result to the console. 
 
-2.TasWebService
+2.TaskWebService
    - ASP.NET WebService with the following Web Methods:
 
 	int Fibonacci(int n)
