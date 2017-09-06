@@ -73,6 +73,7 @@ namespace TaskWebService
                 }
                 catch (XmlException)
                 {
+                    Logger.LogInfoMessage("Bad XML Format");
                     return jsonResult = "Bad XML Format";
                 }
                 if (WebConfigurationManager.AppSettings["JsonFormat"].ToString() == "True")
