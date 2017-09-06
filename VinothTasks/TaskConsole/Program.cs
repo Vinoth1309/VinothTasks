@@ -14,6 +14,7 @@ namespace AssignmentConsole
             TaskWebService.Service1 obj = new TaskWebService.Service1();
             result = obj.Fibonacci(Console.Read());
             Console.WriteLine(result);
+            Console.Read();
         }
     }
 }

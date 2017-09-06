@@ -26,3 +26,5 @@ It contains 3 projects
 
    - Nunit Test cases for XMLToJson
 	XmlToJson("") must be return to "Root element is missing."
+
+   - After run the webservice on localhost, I tested to run this Nunit through Debug -> Start New Instance (it can be checked through other Nunit software like Test driven development)

@@ -22,32 +22,39 @@ namespace TaskWebService
             string result = string.Empty;
             Logger.LogInfoMessage("Finding Nth value in the Fibonacci sequence");
             Logger.LogInfoMessage("The given input:" + n);
-            if (n == 0)
+            try
             {
-                result = string.Concat(string.Format("Fibonacci ({0}) is {1}", n, a));
-                Logger.LogInfoMessage(result);
-            }
-            else if (n == 1)
-            {
-                result = string.Concat(string.Format("Fibonacci ({0}) is {1}", n, b));
-                Logger.LogInfoMessage(result);
-            }
-            else if (n > 1 && n <= 100)
-            {
-                for (int i = 2; i <= n; i++)
+                if (n == 0)
                 {
-                    c = a + b;
-                    a = b;
-                    b = c;
+                    result = string.Concat(string.Format("Fibonacci ({0}) is {1}", n, a));
+                    Logger.LogInfoMessage(result);
                 }
-                result = string.Concat(result, string.Format("Fibonacci ({0}) is {1}", n, c));
-                Logger.LogInfoMessage(result);
+                else if (n == 1)
+                {
+                    result = string.Concat(string.Format("Fibonacci ({0}) is {1}", n, b));
+                    Logger.LogInfoMessage(result);
+                }
+                else if (n > 1 && n <= 100)
+                {
+                    for (int i = 2; i <= n; i++)
+                    {
+                        c = a + b;
+                        a = b;
+                        b = c;
+                    }
+                    result = string.Concat(result, string.Format("Fibonacci ({0}) is {1}", n, c));
+                    Logger.LogInfoMessage(result);
 
+                }
+                else
+                {
+                    result = string.Concat("Fibonacci (" + n + ") is -1");
+                    Logger.LogInfoMessage(result);
+                }
             }
-            else
+            catch (Exception ex)
             {
-                result = string.Concat("Fibonacci (" + n + ") is -1");
-                Logger.LogInfoMessage(result);
+                result = ex.Message.ToString();
             }
             return result;
         }
@@ -56,12 +63,19 @@ namespace TaskWebService
         {
             Logger.LogInfoMessage("XML To JSON");
             Logger.LogInfoMessage("The given xml input:" + xml);
-            string jsonResult = xml; 
+            string jsonResult = xml;
             XmlDocument doc = new XmlDocument();
             try
             {
-                doc.LoadXml(xml);
-                if(WebConfigurationManager.AppSettings["JsonFormat"].ToString() == "True")
+                try
+                {
+                    doc.LoadXml(xml);
+                }
+                catch (XmlException xmlEx)
+                {
+                    return jsonResult = "Bad XML Format: " + xmlEx.Message.ToString();
+                }
+                if (WebConfigurationManager.AppSettings["JsonFormat"].ToString() == "True")
                     jsonResult = XMLToJson.XmlToJSON(doc);
                 Logger.LogInfoMessage("The Converted Json String: " + jsonResult);
                 return jsonResult;
