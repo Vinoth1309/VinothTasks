@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <!--This file represents the results of running a test suite-->
-<test-results name="C:\Users\Vinoth\VinothTasks\VinothTasks\Service1ClientTests\bin\Debug\Service1ClientTests.exe" total="2" errors="0" failures="0" not-run="0" inconclusive="0" ignored="0" skipped="0" invalid="0" date="2017-09-06" time="18:48:38">
+<test-results name="C:\Users\Vinoth\VinothTasks\VinothTasks\Service1ClientTests\bin\Debug\Service1ClientTests.exe" total="2" errors="0" failures="0" not-run="0" inconclusive="0" ignored="0" skipped="0" invalid="0" date="2017-09-07" time="07:59:55">
   <environment nunit-version="2.5.10.11092" clr-version="4.0.30319.1" os-version="Microsoft Windows NT 6.1.7600.0" platform="Win32NT" cwd="C:\Users\Vinoth\VinothTasks\VinothTasks\Service1ClientTests\bin\Debug" machine-name="VINOTH-PC" user="Vinoth" user-domain="Vinoth-PC" />
   <culture-info current-culture="en-IN" current-uiculture="en-US" />
-  <test-suite type="Assembly" name="C:\Users\Vinoth\VinothTasks\VinothTasks\Service1ClientTests\bin\Debug\Service1ClientTests.exe" executed="True" result="Success" success="True" time="3.680" asserts="0">
+  <test-suite type="Assembly" name="C:\Users\Vinoth\VinothTasks\VinothTasks\Service1ClientTests\bin\Debug\Service1ClientTests.exe" executed="True" result="Success" success="True" time="3.376" asserts="0">
     <results>
-      <test-suite type="Namespace" name="Service1ClientTests" executed="True" result="Success" success="True" time="3.660" asserts="0">
+      <test-suite type="Namespace" name="Service1ClientTests" executed="True" result="Success" success="True" time="3.366" asserts="0">
         <results>
-          <test-suite type="TestFixture" name="ServiceClientTests" executed="True" result="Success" success="True" time="3.660" asserts="0">
+          <test-suite type="TestFixture" name="ServiceClientTests" executed="True" result="Success" success="True" time="3.366" asserts="0">
             <results>
-              <test-case name="Service1ClientTests.ServiceClientTests.FibonacciTest" executed="True" result="Success" success="True" time="2.082" asserts="4" />
-              <test-case name="Service1ClientTests.ServiceClientTests.XMLToJsonTest" executed="True" result="Success" success="True" time="0.060" asserts="2" />
+              <test-case name="Service1ClientTests.ServiceClientTests.FibonacciTest" executed="True" result="Success" success="True" time="1.830" asserts="4" />
+              <test-case name="Service1ClientTests.ServiceClientTests.XMLToJsonTest" executed="True" result="Success" success="True" time="0.050" asserts="2" />
             </results>
           </test-suite>
         </results>

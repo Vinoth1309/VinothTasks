@@ -26,12 +26,12 @@ namespace TaskWebService
             {
                 if (n == 0)
                 {
-                    result = string.Concat(string.Format("Fibonacci ({0}) is {1}", n, a));
+                    result = string.Format("Fibonacci ({0}) is {1}", n, a);
                     Logger.LogInfoMessage(result);
                 }
                 else if (n == 1)
                 {
-                    result = string.Concat(string.Format("Fibonacci ({0}) is {1}", n, b));
+                    result = string.Format("Fibonacci ({0}) is {1}", n, b);
                     Logger.LogInfoMessage(result);
                 }
                 else if (n > 1 && n <= 100)
@@ -42,19 +42,20 @@ namespace TaskWebService
                         a = b;
                         b = c;
                     }
-                    result = string.Concat(result, string.Format("Fibonacci ({0}) is {1}", n, c));
+                    result = string.Format("Fibonacci ({0}) is {1}", n, c);
                     Logger.LogInfoMessage(result);
 
                 }
                 else
                 {
-                    result = string.Concat("Fibonacci (" + n + ") is -1");
+                    result = string.Format("Fibonacci ({0}) is -1",n);
                     Logger.LogInfoMessage(result);
                 }
             }
             catch (Exception ex)
             {
                 result = ex.Message.ToString();
+                Logger.LogErrorMessage (result);
             }
             return result;
         }
@@ -73,7 +74,7 @@ namespace TaskWebService
                 }
                 catch (XmlException)
                 {
-                    Logger.LogInfoMessage("Bad XML Format");
+                    Logger.LogErrorMessage ("Bad XML Format");
                     return jsonResult = "Bad XML Format";
                 }
                 if (WebConfigurationManager.AppSettings["JsonFormat"].ToString() == "True")
@@ -83,7 +84,7 @@ namespace TaskWebService
             }
             catch (Exception ex)
             {
-                Logger.LogInfoMessage("EXCEPTION: " + ex.Message.ToString());
+                Logger.LogErrorMessage("EXCEPTION: " + ex.Message.ToString());
                 return ex.Message.ToString();
             }
         }

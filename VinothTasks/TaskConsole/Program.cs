@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.ServiceModel;
 
 namespace AssignmentConsole
 {
@@ -9,11 +10,16 @@ namespace AssignmentConsole
     {
         static void Main(string[] args)
         {
-            string result = string.Empty;
-            Console.WriteLine("Please enter a number for Fibonacci sequence");
-            TaskWebService.Service1 obj = new TaskWebService.Service1();
-            result = obj.Fibonacci(Console.Read());
-            Console.WriteLine(result);
+            TaskWebService.Service1 client;
+            try
+            {
+                client = new TaskWebService.Service1();
+                Console.WriteLine(client.Fibonacci(10));
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message.ToString());
+            }
             Console.Read();
         }
     }
